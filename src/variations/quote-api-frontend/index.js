@@ -2,7 +2,6 @@ import { registerBlockVariation } from '@wordpress/blocks';
 import { addFilter } from '@wordpress/hooks';
 import { QuoteAPIFrontendInspectorControls } from './inspectorControls.js';
 
-console.log( 'quote-api-frontend/index.js' );
 const quoteApiFrontendVariationSettings = {
 	name: 'quote-api-frontend',
 	description:
@@ -23,18 +22,6 @@ const quoteApiFrontendVariationSettings = {
 		namespace: 'quote-api-frontend',
 	},
 	isActive: [ 'namespace' ],
-};
-
-/**
- * Register the "quote-api" block variation
- */
-export const registerQuoteAPIFrontendVariation = () => {
-	registerBlockVariation( 'core/quote', quoteApiFrontendVariationSettings );
-	addFilter(
-		'editor.BlockEdit',
-		'quote-api-editor/add-inspector-controls',
-		addInspectorControls
-	);
 };
 
 /**
@@ -67,3 +54,15 @@ function addInspectorControls( BlockEdit ) {
 		);
 	};
 }
+
+/**
+ * Register the "quote-api" block variation
+ */
+export const registerQuoteAPIFrontendVariation = () => {
+	registerBlockVariation( 'core/quote', quoteApiFrontendVariationSettings );
+	addFilter(
+		'editor.BlockEdit',
+		'quote-api-editor/add-inspector-controls',
+		addInspectorControls
+	);
+};

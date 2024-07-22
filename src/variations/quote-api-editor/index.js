@@ -15,17 +15,6 @@ const quoteApiEditorVariationSettings = {
 	},
 	isActive: [ 'namespace' ],
 };
-/**
- * Register the "quote-api" block variation
- */
-export const registerQuoteAPIEditorVariation = () => {
-	registerBlockVariation( 'core/quote', quoteApiEditorVariationSettings );
-	addFilter(
-		'editor.BlockEdit',
-		'quote-api-editor/add-inspector-controls',
-		addInspectorControls
-	);
-};
 
 /**
  * Check if the block is the "quote-api" variation
@@ -57,3 +46,15 @@ function addInspectorControls( BlockEdit ) {
 		);
 	};
 }
+
+/**
+ * Register the "quote-api" block variation
+ */
+export const registerQuoteAPIEditorVariation = () => {
+	registerBlockVariation( 'core/quote', quoteApiEditorVariationSettings );
+	addFilter(
+		'editor.BlockEdit',
+		'quote-api-editor/add-inspector-controls',
+		addInspectorControls
+	);
+};
