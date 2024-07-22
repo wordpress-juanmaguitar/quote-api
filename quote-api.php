@@ -32,3 +32,7 @@ require_once PLUGIN_DIR . '/includes/register-source-block-binding.php';
 
 add_action('enqueue_block_editor_assets', 'qa__enqueue_block_variations_script');
 add_action('init', 'qa__register_block_bindings_source');
+
+if (defined('WP_CLI') && WP_CLI) {
+	require_once plugin_dir_path(__FILE__) . 'wp-cli-commands.php';
+}
