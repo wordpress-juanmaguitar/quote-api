@@ -37,23 +37,23 @@ export const QuoteAPIEditorInspectorControls = ( props ) => {
 				: URL_RANDOM_QUOTE
 		)
 			.then( ( response ) => response.json() )
-			.then( ( data ) => {
-				let author, content;
-				if ( selectedAuthor ) {
-					( { author, content } =
-						data.results[
-							Math.floor( Math.random() * data.results.length )
-						] );
-				} else {
-					( { author, content } = data[ 0 ] );
-				}
+			.then( ( { author, quote } ) => {
+				// let author, content;
+				// if ( selectedAuthor ) {
+				// 	( { author, content } =
+				// 		data.results[
+				// 			Math.floor( Math.random() * data.results.length )
+				// 		] );
+				// } else {
+				// 	( { author, content } = data[ 0 ] );
+				// }
 
 				setAttributes( {
 					citation: author,
 				} );
 				const newInnerParagraphWithQuote = [
 					createBlock( 'core/paragraph', {
-						content
+						content: quote,
 					} ),
 				];
 				replaceInnerBlocks( clientId, newInnerParagraphWithQuote );

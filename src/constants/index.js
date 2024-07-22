@@ -1,11 +1,11 @@
-const QUOTABLE_API_URL = 'https://api.quotable.io';
-const URL_RANDOM_QUOTE = `${ QUOTABLE_API_URL }/quotes/random`;
-const URL_RANDOM_BY_AUTHOR = `${ QUOTABLE_API_URL }/quotes?author=<%AUTHOR%>`;
+// const QUOTABLE_API_URL = 'https://api.quotable.io';
+const WIKIQUOTE_API_URL = '/wp-json/wikiquote/v1';
+const URL_RANDOM_QUOTE = `${ WIKIQUOTE_API_URL }/random-quote`;
+const URL_RANDOM_BY_AUTHOR = `${ URL_RANDOM_QUOTE }/author/<%AUTHOR%>`;
 
 const AUTHOR_TAG = '<%AUTHOR%>';
 
 const API_ENDPOINTS = {
-	QUOTABLE_API_URL,
 	URL_RANDOM_QUOTE,
 	URL_RANDOM_BY_AUTHOR,
 	AUTHOR_TAG,

@@ -27,8 +27,15 @@ if (!defined('PLUGIN_FILE')) {
 }
 define('API_BASE_URL', 'https://api.quotable.io');
 
+require_once PLUGIN_DIR . 'vendor/autoload.php';
+require_once PLUGIN_DIR . 'includes/WikiquoteAPI.php';
+require_once PLUGIN_DIR . '/includes/register-wikiquote-rest-api-endpoints.php';
+
 require_once PLUGIN_DIR . '/includes/enqueue-assets.php';
 require_once PLUGIN_DIR . '/includes/register-source-block-binding.php';
 
 add_action('enqueue_block_editor_assets', 'qa__enqueue_block_variations_script');
 add_action('init', 'qa__register_block_bindings_source');
+
+// Register WikiQuote custom REST API endpoints.
+add_action('rest_api_init', 'qa__wikiquote_api_init');

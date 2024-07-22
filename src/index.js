@@ -3,6 +3,8 @@ import { addFilter } from '@wordpress/hooks';
 import { registerQuoteAPIEditorVariation } from './variations/quote-api-editor';
 import { registerQuoteAPIFrontendVariation } from './variations/quote-api-frontend';
 
+console.log('Hello from the index.js file!');
+
 /**
  * Add the "namespace" attribute to "core/quote" block
  * @param {Object} settings

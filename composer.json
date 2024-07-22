@@ -1,0 +1,12 @@
+{
+    "name": "juanmanuelgarrido/quote-api",
+    "require": {
+        "guzzlehttp/guzzle": "^7.9"
+    },
+    "authors": [
+        {
+            "name": "JuanMa Garrido",
+            "email": "juanma.garrido@gmail.com"
+        }
+    ]
+}
