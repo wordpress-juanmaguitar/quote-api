@@ -25,6 +25,7 @@ if (!defined('PLUGIN_DIR')) {
 if (!defined('PLUGIN_FILE')) {
 	define('PLUGIN_FILE', __FILE__);
 }
+define('API_BASE_URL', 'https://api.quotable.io');
 
 require_once PLUGIN_DIR . '/includes/enqueue-assets.php';
 require_once PLUGIN_DIR . '/includes/register-source-block-binding.php';

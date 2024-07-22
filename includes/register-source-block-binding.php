@@ -3,19 +3,18 @@
 /**
  * This file contains the functions related to registering block styles.
  *
- * @package wp-dev-box
+ * @package quote-api
  * @since 1.0.0
  */
 
-
 /**
- * projectslug_register_block_bindings
+ * Registers the custom block bindings source for the 'qa/random-quote' block.
  *
  * @return void
  */
 function qa__register_block_bindings_source()
 {
-	register_block_bindings_source('qa/random-quote', array(
+	register_block_bindings_source('qa/random-quote-tags', array(
 		'label'              => __('Random Quote', 'dh-alternatives-custom-blocks'),
 		'get_value_callback' => 'qa__random_quote_binding',
 	));
@@ -33,9 +32,8 @@ function qa__register_block_bindings_source()
 function qa__random_quote_binding($source_args, $block_instance, $attribute_name)
 {
 
-	$URL_FETCH_QUOTES = 'https://api.quotable.io/quotes/random?tags=' . $source_args['tags'];
+	$URL_FETCH_QUOTES = API_BASE_URL . '/quotes/random?tags=' . $source_args['tags'];
 	$response = wp_remote_get($URL_FETCH_QUOTES);
-	wpDevBox\Utils\Debug\write_log($URL_FETCH_QUOTES);
 
 	if (is_wp_error($response)) {
 		return '';

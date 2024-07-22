@@ -45,7 +45,7 @@ export const QuoteAPIFrontendInspectorControls = ( props ) => {
 									metadata: {
 										bindings: {
 											content: {
-												source: 'qa/random-quote',
+												source: 'qa/random-quote-tags',
 												args: {
 													tags: token.join( '|' ),
 												},
